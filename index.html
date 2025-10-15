@@ -1,110 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project Plan – Hotel Overflow Booking (Phase 1)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Plan – Hotel Overflow App</title>
+  <!-- Load Tailwind CSS for modern styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Set default font to Inter for clean readability -->
+  <style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <header class="bg-white shadow-sm">
-    <div class="max-w-5xl mx-auto px-6 py-6">
-      <h1 class="text-2xl font-semibold text-sky-600">📌 Project Plan – Hotel Overflow Booking (Phase 1)</h1>
-      <p class="text-sm text-gray-500 mt-1">Concise plan for a mobile booking app that helps hotels handle customer overflow</p>
-    </div>
-  </header>
 
-  <main class="max-w-5xl mx-auto px-6 py-8 space-y-10">
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-5xl mx-auto px-4 py-4 md:py-6">
+      <h1 class="text-2xl font-extrabold text-red-700 tracking-tight">📌 Project Plan – Hotel Room Overflow/Allocation App (Phase 1)</h1>
+      <p class="text-sm text-gray-500 mt-1">Professional summary of the room allocation platform development.</p>
+    </div>
+  </header>
 
-    <!-- 1. Project Overview -->
-    <section>
-      <h2 class="text-xl font-semibold mb-3">1. Project Overview</h2>
-      <div class="bg-white shadow rounded-lg p-5">
-        <p>
-          Develop a <strong>mobile booking app</strong> for hotels that experience a surplus / overflow of customers and need to quickly place guests into nearby hotels.
-          The app enables a fast, real-time notification and acceptance flow so hotels with available rooms can accept overflow requests immediately.
-        </p>
-      </div>
-    </section>
+  <!-- Content -->
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
 
-    <!-- 2. Main User Types -->
-    <section>
-      <h2 class="text-xl font-semibold mb-3">2. Main User Types</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white shadow rounded-lg p-5">
-          <h3 class="font-bold mb-2">👤 Customers</h3>
-          <p class="text-sm text-gray-600">Not available to customers (yet).</p>
-        </div>
-        <div class="bg-white shadow rounded-lg p-5">
-          <h3 class="font-bold mb-2">🏨 Business Owners (Hotels)</h3>
-          <ul class="list-disc list-inside space-y-1 text-gray-700">
-            <li>Receive overflow requests from nearby hotels</li>
-            <li>Accept, reject, or propose new appointments</li>
-            <li>Manage bookings in real-time</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- 1. Overview -->
+    <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">1. Project Overview</h2>
+      <p class="text-base text-gray-700 leading-relaxed">
+        We will develop a **mobile allocation app** designed to handle **customer overflow** from hotels,
+        redirecting or booking them into available rooms at nearby, collaborating hotel partners.
+        This application serves as a B2B tool to manage surplus customers efficiently. The platform is designed for future expansion into other industries with high demand/supply fluctuation.
+      </p>
+    </section>
 
-    <!-- 3. Core Features -->
-    <section>
-      <h2 class="text-xl font-semibold mb-3">3. Core Features – Phase 1</h2>
-      <div class="bg-white shadow rounded-lg p-5">
-        <ul class="list-disc list-inside space-y-2">
-          <li>📱 Native app for Android &amp; iOS</li>
-          <li>🔔 Real-time notifications</li>
-          <li>📅 Booking system with clear confirmation flow</li>
-          <li>✉️ Automatic confirmation upon acceptance</li>
-          <li>❌ Reject &amp; reschedule options</li>
-          <li>🧠 Basic admin dashboard</li>
-          <li>🏗 Publishing on Google Play &amp; App Store</li>
-        </ul>
-      </div>
-    </section>
+    <!-- 2. User Types -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">2. Main User Types</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white shadow-xl rounded-xl p-6 transition duration-300 hover:shadow-2xl">
+          <h3 class="text-lg font-bold text-red-600 mb-3 flex items-center">
+                <span class="mr-2 text-2xl">👤</span> Customers (End-Users)
+            </h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-600">
+            <li>**Note:** Not directly available to customers in Phase 1 (B2B staff tool).</li>
+            <li>Interaction is managed entirely by hotel staff.</li>
+          </ul>
+        </div>
+        <div class="bg-white shadow-xl rounded-xl p-6 transition duration-300 hover:shadow-2xl">
+          <h3 class="text-lg font-bold text-red-600 mb-3 flex items-center">
+                <span class="mr-2 text-2xl">🏢</span> Business Owners (Hotels)
+            </h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-600">
+            <li>Submit overflow requests (Requesting Hotel).</li>
+            <li>Receive, accept, reject, or propose new assignment solutions (Partner Hotel).</li>
+            <li>Manage room reallocation assignments in real-time.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <!-- 4. Booking Flow Diagram -->
-    <section>
-      <h2 class="text-xl font-semibold mb-3">4. Booking Flow Diagram</h2>
-      <div class="bg-white shadow rounded-lg p-5">
-        <ol class="list-decimal list-inside space-y-3 text-gray-700">
-          <li>Hotel with an overflow of customers submits on the app that they need extra rooms.</li>
-          <li>Notifications are sent to nearby hotels.</li>
-          <li>The first (come first serve) hotel in the area that has available rooms for that party accepts.</li>
-          <li class="ml-4">Hotels that are not fast enough to accept the order or don’t have available rooms do not need to explicitly reject — they will simply wait for the next alert.</li>
-          <li>Both parties receive real-time updates (confirmation of placement, room details and next steps).</li>
-        </ol>
+    <!-- 3. Core Features -->
+    <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">3. Core Features – Phase 1</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-700">
+        <li><span class="font-medium text-red-600">📱 Native app</span> for Android & iOS (staff tool)</li>
+        <li><span class="font-medium text-red-600">🔔 Real-time notifications</span> (for request alerts)</li>
+        <li><span class="font-medium text-red-600">📅 Room Request/Allocation system</span> with clear confirmation flow</li>
+        <li><span class="font-medium text-red-600">✉️ Automatic confirmation</span> to the requesting hotel upon acceptance</li>
+        <li><span class="font-medium text-red-600">❌ Reject & propose new solutions</span> options (for receiving partners)</li>
+        <li><span class="font-medium text-red-600">🧠 Basic admin dashboard</span> for monitoring assignments</li>
+        <li><span class="font-medium text-red-600">🏗 Publishing</span> on Google Play & Apple App Store</li>
+      </ul>
+    </section>
 
-        <div class="mt-4 text-sm text-gray-500">
-          <strong>Notes:</strong>
-          <ul class="list-disc list-inside">
-            <li>Acceptance is first-come, first-served to ensure speed.</li>
-            <li>Real-time inventory checks are recommended to avoid double-booking.</li>
-            <li>Future phases may include customer-facing features and payment integration.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- 4. Booking Flow -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">4. Allocation Flow Diagram</h2>
+      <ol class="list-decimal list-inside space-y-3 text-gray-700 pl-4 bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
+        <li><strong>Request Submission:</strong> Hotel with customer overflow submits a room request via the app (specifying details).</li>
+        <li><strong>Alert Distribution:</strong> Notifications are broadcast to nearby, collaborating hotel partners.</li>
+        <li><strong>First-to-Accept Allocation (F.C.F.S):</strong> The first partner hotel in the area with available rooms that accepts the request secures the allocation.</li>
+        <li><strong>Passive Rejection:</strong> Hotels that are unable to accept (due to lack of speed or lack of availability) passively let the request expire or be claimed. No manual rejection is required.</li>
+        <li><strong>Real-time Update:</strong> Both the requesting hotel and the receiving partner hotel receive real-time confirmation of the allocation.</li>
+      </ol>
+    </section>
 
-    <!-- Footer / Next Steps -->
-    <section>
-      <h2 class="text-xl font-semibold mb-3">Next Steps</h2>
-      <div class="bg-white shadow rounded-lg p-5">
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-          <li>Review and confirm the feature list.</li>
-          <li>Approve scope and budget / sign agreement.</li>
-          <li>Provide hotel branding and sample inventory data.</li>
-          <li>Create or share developer accounts for publishing.</li>
-          <li>Start design and development (Phase 1).</li>
-        </ul>
-      </div>
-    </section>
+    <!-- 5. Platforms -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">5. Platforms & Developer Accounts</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white shadow-xl rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-red-600 text-white text-left text-sm uppercase">
+              <th class="py-3 px-4 font-semibold">Platform</th>
+              <th class="py-3 px-4 font-semibold">Fee</th>
+              <th class="py-3 px-4 font-semibold">Account Type</th>
+              <th class="py-3 px-4 font-semibold">Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t hover:bg-gray-50 transition duration-150">
+              <td class="py-3 px-4 font-medium">Google Play</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">USD 25 (one-time)</td>
+              <td class="py-3 px-4">Individual / Company</td>
+              <td class="py-3 px-4">Paid once, no renewal</td>
+            </tr>
+            <tr class="border-t hover:bg-gray-50 transition duration-150">
+              <td class="py-3 px-4 font-medium">Apple Developer</td>
+              <td class="py-3 px-4 text-red-600 font-semibold">USD 99/year</td>
+              <td class="py-3 px-4">Individual / Company</td>
+              <td class="py-3 px-4">Required annually</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-500 mt-2">
+        These are official platform fees, paid directly to Google and Apple, separate from development costs.
+      </p>
+    </section>
 
-  </main>
+    <!-- 6. Future -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">6. Future Expansion (Optional)</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-700 bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+        <li>💳 Online payments (for partner hotel compensation)</li>
+        <li>⭐ Ratings & reviews (B2B system for partner reliability)</li>
+        <li>🌍 Multi-language support</li>
+        <li>📊 Advanced reports & analytics</li>
+        <li>💻 Web admin portal</li>
+      </ul>
+    </section>
 
-  <footer class="bg-gray-100 mt-10">
-    <div class="max-w-5xl mx-auto px-6 py-4 text-center text-sm text-gray-500">
-      © 2025 Hotel Overflow Booking – Phase 1
-    </div>
-  </footer>
+    <!-- 7. Next Steps -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">7. Next Steps</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-700">
+        <li>Review and confirm feature list</li>
+        <li>Sign agreement / approve budget</li>
+        <li>Provide branding assets (logo, color theme, references)</li>
+        <li>Create or share developer accounts</li>
+        <li>Start design and development</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 mt-12">
+    <div class="max-w-5xl mx-auto px-4 py-4 text-center text-sm text-gray-600">
+      © 2025 Hotel Allocation App Project Plan – Phase 1 | Pending approval and execution.
+    </div>
+  </footer>
+
 </body>
 </html>

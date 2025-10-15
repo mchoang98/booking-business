@@ -1,159 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project Plan – Hotel Overflow App</title>
-  <!-- Load Tailwind CSS for modern styling -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Set default font to Inter for clean readability -->
-  <style>
-    body {
-        font-family: 'Inter', sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Plan: B2B Hotel Overflow System (Phase 1)</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for theme consistency */
+        :root {
+            --primary-color: #5B21B6; /* Violet-700 */
+            --secondary-color: #10B981; /* Emerald-500 */
+            --bg-color: #F8FAFC; /* Slate-50 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+        }
+        /* Custom border for section titles */
+        .section-title {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        /* Card styling */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        /* SVG Flowchart Styling */
+        .flow-node {
+            fill: #E0E7FF; /* Indigo-100 */
+            stroke: var(--primary-color);
+            stroke-width: 2;
+            rx: 8;
+            ry: 8;
+            transition: fill 0.3s;
+        }
+        .flow-node-success {
+            fill: #D1FAE5; /* Emerald-100 */
+            stroke: var(--secondary-color);
+        }
+        .flow-text {
+            font-size: 14px;
+            font-weight: 500;
+            fill: #1E293B; /* Slate-800 */
+        }
+        .flow-arrow {
+            stroke: #475569; /* Slate-600 */
+            stroke-width: 2;
+            marker-end: url(#arrowhead);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#5B21B6',
+                        'secondary': '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">
+                <span class="text-primary">Project Plan</span> – B2B Hotel Overflow System (Phase 1)
+            </h1>
+            <p class="mt-2 text-xl text-gray-500">Booking App for Hotel Customer Overflow</p>
+        </header>
 
-  <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-10">
-    <div class="max-w-5xl mx-auto px-4 py-4 md:py-6">
-      <h1 class="text-2xl font-extrabold text-red-700 tracking-tight">📌 Project Plan – Hotel Room Overflow/Allocation App (Phase 1)</h1>
-      <p class="text-sm text-gray-500 mt-1">Professional summary of the room allocation platform development.</p>
-    </div>
-  </header>
+        <!-- 1. Project Overview & 2. Main User Types -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="card">
+                <h2 class="text-xl font-bold mb-4 section-title">1. Project Overview</h2>
+                <p class="text-gray-700 leading-relaxed">Develop a <strong>B2B room reservation system</strong> connecting hotels with a <strong>surplus of customers</strong> (Host Hotel) to <strong>nearby hotels</strong> (Partner Hotels) with room availability. The system focuses on efficient, real-time customer re-allocation and is designed for future expansion into other corporate booking solutions.</p>
+            </div>
 
-  <!-- Content -->
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+            <div class="card">
+                <h2 class="text-xl font-bold mb-4 section-title">2. Main User Types</h2>
+                <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                    <li>
+                        <span class="font-semibold text-primary">Business Owners (Host/Partner Hotels):</span> Receive overflow alerts; accept, manage, or propose new appointments in real-time.
+                    </li>
+                    <li>
+                        <span class="font-semibold text-primary">Customers:</span> Not available to customers (yet).
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- 1. Overview -->
-    <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">1. Project Overview</h2>
-      <p class="text-base text-gray-700 leading-relaxed">
-        We will develop a **mobile allocation app** designed to handle **customer overflow** from hotels,
-        redirecting or booking them into available rooms at nearby, collaborating hotel partners.
-        This application serves as a B2B tool to manage surplus customers efficiently. The platform is designed for future expansion into other industries with high demand/supply fluctuation.
-      </p>
-    </section>
+        <!-- 3. Core Features -->
+        <div class="card mb-12">
+            <h2 class="text-xl font-bold mb-4 section-title">3. Core Features – Phase 1</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <ul class="list-disc list-inside space-y-2 text-gray-700 col-span-2">
+                    <li>📱 Web Portal/Dashboard for Host and Partner Hotels</li>
+                    <li>🔔 Real-time notifications for overflow alerts</li>
+                    <li>📅 FCFS (First-Come-First-Serve) room allocation</li>
+                    <li>✉️ Automatic confirmation upon acceptance</li>
+                    <li>❌ Manual override & management options</li>
+                </ul>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>🧠 Basic admin dashboard for management</li>
+                    <li>🏗 Publishing on Google Play & App Store (for staff app)</li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- 2. User Types -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">2. Main User Types</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white shadow-xl rounded-xl p-6 transition duration-300 hover:shadow-2xl">
-          <h3 class="text-lg font-bold text-red-600 mb-3 flex items-center">
-                <span class="mr-2 text-2xl">👤</span> Customers (End-Users)
-            </h3>
-          <ul class="list-disc list-inside space-y-2 text-gray-600">
-            <li>**Note:** Not directly available to customers in Phase 1 (B2B staff tool).</li>
-            <li>Interaction is managed entirely by hotel staff.</li>
-          </ul>
-        </div>
-        <div class="bg-white shadow-xl rounded-xl p-6 transition duration-300 hover:shadow-2xl">
-          <h3 class="text-lg font-bold text-red-600 mb-3 flex items-center">
-                <span class="mr-2 text-2xl">🏢</span> Business Owners (Hotels)
-            </h3>
-          <ul class="list-disc list-inside space-y-2 text-gray-600">
-            <li>Submit overflow requests (Requesting Hotel).</li>
-            <li>Receive, accept, reject, or propose new assignment solutions (Partner Hotel).</li>
-            <li>Manage room reallocation assignments in real-time.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+        <!-- 4. Booking Flow Diagram (SVG) -->
+        <div class="card mb-12">
+            <h2 class="text-xl font-bold mb-6 section-title">4. Booking Flow Diagram: Hotel Overflow</h2>
+            <div class="bg-indigo-50 p-6 rounded-xl overflow-x-auto">
+                <svg width="100%" height="450" viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" class="min-w-[650px]">
+                    <defs>
+                        <!-- Custom arrowhead marker for SVG -->
+                        <marker id="arrowhead" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569" />
+                        </marker>
+                    </defs>
 
-    <!-- 3. Core Features -->
-    <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">3. Core Features – Phase 1</h2>
-      <ul class="list-disc list-inside space-y-2 text-gray-700">
-        <li><span class="font-medium text-red-600">📱 Native app</span> for Android & iOS (staff tool)</li>
-        <li><span class="font-medium text-red-600">🔔 Real-time notifications</span> (for request alerts)</li>
-        <li><span class="font-medium text-red-600">📅 Room Request/Allocation system</span> with clear confirmation flow</li>
-        <li><span class="font-medium text-red-600">✉️ Automatic confirmation</span> to the requesting hotel upon acceptance</li>
-        <li><span class="font-medium text-red-600">❌ Reject & propose new solutions</span> options (for receiving partners)</li>
-        <li><span class="font-medium text-red-600">🧠 Basic admin dashboard</span> for monitoring assignments</li>
-        <li><span class="font-medium text-red-600">🏗 Publishing</span> on Google Play & Apple App Store</li>
-      </ul>
-    </section>
+                    <!-- Nodes -->
+                    <!-- Start -->
+                    <rect x="50" y="20" width="180" height="60" class="flow-node" />
+                    <text x="140" y="55" text-anchor="middle" class="flow-text">1. Host Hotel Submits Overflow Request</text>
 
-    <!-- 4. Booking Flow -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">4. Allocation Flow Diagram</h2>
-      <ol class="list-decimal list-inside space-y-3 text-gray-700 pl-4 bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
-        <li><strong>Request Submission:</strong> Hotel with customer overflow submits a room request via the app (specifying details).</li>
-        <li><strong>Alert Distribution:</strong> Notifications are broadcast to nearby, collaborating hotel partners.</li>
-        <li><strong>First-to-Accept Allocation (F.C.F.S):</strong> The first partner hotel in the area with available rooms that accepts the request secures the allocation.</li>
-        <li><strong>Passive Rejection:</strong> Hotels that are unable to accept (due to lack of speed or lack of availability) passively let the request expire or be claimed. No manual rejection is required.</li>
-        <li><strong>Real-time Update:</strong> Both the requesting hotel and the receiving partner hotel receive real-time confirmation of the allocation.</li>
-      </ol>
-    </section>
+                    <!-- Notification -->
+                    <rect x="260" y="20" width="180" height="60" class="flow-node" />
+                    <text x="350" y="55" text-anchor="middle" class="flow-text">2. Alert to Nearby Partner Hotels</text>
 
-    <!-- 5. Platforms -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">5. Platforms & Developer Accounts</h2>
-      <div class="overflow-x-auto">
-        <table class="min-w-full bg-white shadow-xl rounded-xl overflow-hidden">
-          <thead>
-            <tr class="bg-red-600 text-white text-left text-sm uppercase">
-              <th class="py-3 px-4 font-semibold">Platform</th>
-              <th class="py-3 px-4 font-semibold">Fee</th>
-              <th class="py-3 px-4 font-semibold">Account Type</th>
-              <th class="py-3 px-4 font-semibold">Note</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-t hover:bg-gray-50 transition duration-150">
-              <td class="py-3 px-4 font-medium">Google Play</td>
-              <td class="py-3 px-4 text-green-600 font-semibold">USD 25 (one-time)</td>
-              <td class="py-3 px-4">Individual / Company</td>
-              <td class="py-3 px-4">Paid once, no renewal</td>
-            </tr>
-            <tr class="border-t hover:bg-gray-50 transition duration-150">
-              <td class="py-3 px-4 font-medium">Apple Developer</td>
-              <td class="py-3 px-4 text-red-600 font-semibold">USD 99/year</td>
-              <td class="py-3 px-4">Individual / Company</td>
-              <td class="py-3 px-4">Required annually</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="text-sm text-gray-500 mt-2">
-        These are official platform fees, paid directly to Google and Apple, separate from development costs.
-      </p>
-    </section>
+                    <!-- Acceptance (FCFS) -->
+                    <rect x="500" y="20" width="180" height="60" class="flow-node" />
+                    <text x="590" y="55" text-anchor="middle" class="flow-text">3. Partner Hotel Accepts (FCFS)</text>
 
-    <!-- 6. Future -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">6. Future Expansion (Optional)</h2>
-      <ul class="list-disc list-inside space-y-2 text-gray-700 bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-        <li>💳 Online payments (for partner hotel compensation)</li>
-        <li>⭐ Ratings & reviews (B2B system for partner reliability)</li>
-        <li>🌍 Multi-language support</li>
-        <li>📊 Advanced reports & analytics</li>
-        <li>💻 Web admin portal</li>
-      </ul>
-    </section>
+                    <!-- Silent Decline Note -->
+                    <rect x="250" y="160" width="200" height="80" class="flow-node" style="fill:#FEE2E2; stroke:#EF4444;">
+                         <text x="350" y="185" text-anchor="middle" class="flow-text" style="fill:#991B1B; font-size:12px;">Hotels not fast enough/unavailable</text>
+                         <text x="350" y="210" text-anchor="middle" class="flow-text" style="fill:#991B1B; font-size:12px;">do not need to decline/reject.</text>
+                    </rect>
 
-    <!-- 7. Next Steps -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">7. Next Steps</h2>
-      <ul class="list-disc list-inside space-y-2 text-gray-700">
-        <li>Review and confirm feature list</li>
-        <li>Sign agreement / approve budget</li>
-        <li>Provide branding assets (logo, color theme, references)</li>
-        <li>Create or share developer accounts</li>
-        <li>Start design and development</li>
-      </ul>
-    </section>
+                    <!-- Real-time Update -->
+                    <rect x="260" y="300" width="180" height="60" class="flow-node flow-node-success" />
+                    <text x="350" y="335" text-anchor="middle" class="flow-text">4. Both Receive Real-time Update</text>
 
-  </main>
+                    <!-- Arrows -->
 
-  <!-- Footer -->
-  <footer class="bg-gray-200 mt-12">
-    <div class="max-w-5xl mx-auto px-4 py-4 text-center text-sm text-gray-600">
-      © 2025 Hotel Allocation App Project Plan – Phase 1 | Pending approval and execution.
-    </div>
-  </footer>
+                    <!-- 1 -> 2 -->
+                    <line x1="230" y1="50" x2="260" y2="50" class="flow-arrow" />
 
+                    <!-- 2 -> 3 -->
+                    <line x1="440" y1="50" x2="500" y2="50" class="flow-arrow" />
+
+                    <!-- 3 -> 4 (Accept) - Down/Left -->
+                    <polyline points="590,80 590,280 440,280 440,300" class="flow-arrow" fill="none" />
+                    <text x="515" y="180" class="flow-text text-sm" style="font-weight:700;">Success</text>
+
+                    <!-- 2 -> Silent Decline Note (Informational) -->
+                    <line x1="350" y1="80" x2="350" y2="160" class="flow-arrow" />
+                    <text x="370" y="125" class="flow-text text-sm">Alert Sent</text>
+                    
+                    <!-- Silent Decline Note -> 4 (End of current flow for non-accepters) -->
+                    <line x1="350" y1="240" x2="350" y2="300" class="flow-arrow" />
+
+                    <!-- Final Note -->
+                    <text x="350" y="410" text-anchor="middle" class="flow-text text-lg font-bold" fill="var(--primary-color)">
+                        B2B Re-allocation Synchronization
+                    </text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- 5. Platforms & Developer Accounts (Table) -->
+        <div class="card mb-12">
+            <h2 class="text-xl font-bold mb-4 section-title">5. Platforms & Developer Accounts</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Platform</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Official Fee</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Account Type</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200 text-gray-700">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium">Google Play</td>
+                            <td class="px-6 py-4 whitespace-nowrap font-bold text-secondary">USD 25 (One-time)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Individual / Company</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Paid once, no renewal needed</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium">Apple Developer</td>
+                            <td class="px-6 py-4 whitespace-nowrap font-bold text-red-500">USD 99/year</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Individual / Company</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Required annually</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4 text-sm text-gray-500 italic">
+                * These are official platform fees (Google/Apple), paid directly by the client (required for staff-facing mobile app).
+            </p>
+        </div>
+
+        <!-- 6. Future Expansion & 7. Next Steps -->
+        <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <div class="card">
+                <h2 class="text-xl font-bold mb-4 section-title">6. Future Expansion (Optional)</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Integration with Hotel PMS (Property Management Systems)</li>
+                    <li>Automated Capacity & Pricing Synchronization</li>
+                    <li>Advanced Reporting, Audit Logs, and Billing Generation</li>
+                    <li>Direct Customer Re-allocation Notification Link (Optional Phase 2)</li>
+                    <li>Expansion to other B2B overflow industries (e.g., travel agencies)</li>
+                </ul>
+            </div>
+
+            <div class="card bg-primary text-white">
+                <h2 class="text-xl font-bold mb-4 section-title border-white">7. Next Steps</h2>
+                <ol class="list-decimal list-inside space-y-2 font-medium">
+                    <li>Review and confirm feature list</li>
+                    <li>Sign agreement / Approve budget</li>
+                    <li>Provide branding assets (logo, color theme, references)</li>
+                    <li>Create or share Google Play & Apple Developer accounts</li>
+                    <li>Start design and development</li>
+                </ol>
+                <button onclick="console.log('Call to action clicked')" class="mt-6 w-full py-2 bg-secondary text-white font-bold rounded-lg hover:bg-emerald-600 transition duration-150 shadow-md">
+                    READY TO LAUNCH THE PROJECT
+                </button>
+            </div>
+        </div>
+
+        <footer class="text-center text-sm text-gray-400 pt-8 border-t border-gray-200 mt-8">
+            Professional Project Plan Summary.
+        </footer>
+    </div>
 </body>
 </html>
